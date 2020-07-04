@@ -13,7 +13,8 @@ public class MenuItem {
     //It should be possible to display whether a menu item is new or not
     private boolean isNew;
 
-    public MenuItem(double p, String d, String c, boolean iN) {
+    public MenuItem(String n,double p, String d, String c, boolean iN) {
+        this.name = n;
         this.price = p;
         this.description = d;
         this.category = c;
@@ -69,15 +70,18 @@ public class MenuItem {
         }
     }
 
-    //A Way to print out a single menu item
-    public void printItem(MenuItem item) {
-        String itemDescription = item.getDescription();
-        String itemName = item.getName();
-        double itemPrice = item.getPrice();
-        boolean isNewItem = item.isNew();
-        System.out.println("Item :" + itemName + " " + itemDescription + " " + itemPrice + " " + isNewItem);
-    }
     //A Way to determine where or not two menu items are equal
+
+    @Override
+    public String toString() {
+        return "MenuItem:{" +
+                "price=" + price +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", category='" + category + '\'' +
+                ", isNew=" + isNew +
+                '}';
+    }
 
     @Override
     public boolean equals(Object o) {

@@ -49,7 +49,7 @@ public class Menu {
         return this.menuItemList;
     }
     // A way to tell when the menu was last updated.
-    public String menuLastUpdated(){
+    public String menuLastUpdated(Date lastUpdated){
         return ("Last updated on " + this.lastUpdated);
     }
 
@@ -57,8 +57,16 @@ public class Menu {
     public void printMenu(){
         for (int index = 0; index <menuItemList.size() ; index++) {
             //get description at index
-            System.out.println(menuItemList.get(index));
+            System.out.println(menuItemList.get(index).toString());
         }
+    }
+    //A Way to print out a single menu item
+    public void printItem(MenuItem item) {
+        String itemDescription = item.getDescription();
+        String itemName = item.getName();
+        double itemPrice = item.getPrice();
+        boolean isNewItem = item.isNew();
+        System.out.println("Item :" + itemName + " " + itemDescription + " " + itemPrice + " " + isNewItem);
     }
 }
 
