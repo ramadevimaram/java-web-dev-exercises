@@ -36,26 +36,46 @@ public class CountingCharacters {
         }
     }
 }
-        /*
-        //Read the String in from file
+/*
+package class2studio;
 
-        String filePath = "C://java_SW//Lc101-JAVA/demo.txt";
-        System.out.println( readLineByLineJava8( filePath ) );
-    }
+import java.io.File;
+import java.util.HashMap;
+import java.util.Scanner;
 
+public class Studio {
+    public static void main (String[] args){
 
-    //Read file content into string with - Files.lines(Path path, Charset cs)
+        try {
 
-    private static String readLineByLineJava8(String filePath) {
-        StringBuilder contentBuilder = new StringBuilder();
+            File file = new File( "src/class2studio/input.txt");
 
-        try (Stream<String> stream = Files.lines(Paths.get(filePath), StandardCharsets.UTF_8)) {
-            stream.forEach(s -> contentBuilder.append(s).append("\n"));
-        } catch (IOException e) {
-            e.printStackTrace();
+            Scanner input = new Scanner(file);
+            String output = input.nextLine();
+
+            HashMap<Character, Integer> charMap = new HashMap<Character, Integer>();
+
+            for(char c : output.toLowerCase().toCharArray()){
+
+                if(Character.isLetter(c)){
+
+                    if(!charMap.containsKey(c)){
+                        charMap.put(c, 1);
+                    } else {
+                        int value = charMap.get(c);
+
+                        charMap.put(c, value + 1);
+
+                    }
+                }
+            }
+
+            System.out.println(charMap);
+        } catch (Exception error) {
+
+            System.err.println("No file to read.");
         }
-
-        return contentBuilder.toString();
     }
 }
-*/
+
+ */
